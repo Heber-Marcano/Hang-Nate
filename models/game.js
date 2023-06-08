@@ -11,10 +11,13 @@ Game.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    word: {
-      type: DataTypes.STRING,
+    word_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      
+      references: {
+        model: 'word',
+        key: 'id',
+      },
     },
     won: {
       type: DataTypes.BOOLEAN,
@@ -27,10 +30,11 @@ Game.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'users',
         key: 'id',
       },
     },
+    //tries
   },
   {
     sequelize,
