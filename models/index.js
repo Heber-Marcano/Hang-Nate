@@ -20,4 +20,4 @@ Word.belongsToMany(Game,{
   foreignKey: 'word_id'
 });
 
-module.exports = { User, Game };
+module.exports = { User, Game, Word };
