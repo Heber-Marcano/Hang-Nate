@@ -1,23 +1,53 @@
-function submitForm(event) {
-  // Prevent the default action from happening.
+const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  // Get the form data.
-  var formData = new FormData(document.getElementById("myForm"));
+  // Collect values from the login form
+  const email = document.querySelector('.email').value.trim();
+  const password = document.querySelector('.password').value.trim();
+  const name = document.querySelector('.username').value.trim();
+  if (email && password) {
+    // Send a POST request to the API endpoint
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  // Submit the form data to the server.
-  $.ajax({
-    url: "/users",
-    type: "POST",
-    data: formData,
-    success: function(response) {
-      // Do something with the response.
-    },
-    error: function(error) {
-      // Handle the error.
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
     }
-  });
-}
+  }
+};
 
-// Bind the submit event to the submit button.
-document.getElementById("submitButton").addEventListener("click", submitForm);
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const email = document.querySelector('.email').value.trim();
+  const password = document.querySelector('.password').value.trim();
+  const name = document.querySelector('.username').value.trim();
+
+  if (name && email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ name, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+document
+  .querySelector('.login')
+  .addEventListener('click', loginFormHandler);
+
+document
+  .querySelector('.create-account')
+  .addEventListener('click', signupFormHandler);
