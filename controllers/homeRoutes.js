@@ -35,10 +35,10 @@ router.get('/profile', async (req, res) => {
   try { 
     // Find the logged in user based on the session ID
     // TODO change req.query.id to use the session id instead
-    const userData = await User.findByPk(req.query.id)
+    const userData = await User.findByPk(req.session.user_id)
 // TODO if userData is null then redirect to 404 page or home ?
     const user = userData.get({ plain: true });
-    
+    console.log(user)
     res.render('profile', {
       ...user,
       logged_in: true
