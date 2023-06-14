@@ -1,4 +1,5 @@
 window.onload = function () {
+ 
   var alphabet = [
     "a",
     "b",
@@ -118,17 +119,28 @@ window.onload = function () {
     myStickman = document.getElementById("stickman");
     context = myStickman.getContext("2d");
     context.beginPath();
-    context.strokeStyle = "#fff";
+    context.strokeStyle = "#000";
     context.lineWidth = 2;
   };
-
   head = function () {
     myStickman = document.getElementById("stickman");
     context = myStickman.getContext("2d");
+    
+   
+    var image = new Image();
+    image.src = 'assets/nate_720.png';
+    image.onload = function() {
+     context.drawImage(image, 12, 15, 60, 60); 
+    };
+    
     context.beginPath();
-    context.arc(60, 25, 10, 0, Math.PI * 2, true);
+    context.strokeStyle = "#000";
+    context.lineWidth = 2;
+    
     context.stroke();
   };
+
+
 
   draw = function ($pathFromx, $pathFromy, $pathTox, $pathToy) {
     context.moveTo($pathFromx, $pathFromy);
@@ -149,27 +161,27 @@ window.onload = function () {
   };
 
   frame4 = function () {
-    draw(60, 5, 60, 15);
+    draw(40, 5, 40, 15);
   };
 
   torso = function () {
-    draw(60, 36, 60, 70);
+    draw(40, 75, 40, 135);
   };
-
+  
   rightArm = function () {
-    draw(60, 46, 100, 50);
+    draw(40, 85, 80, 90);
   };
-
+  
   leftArm = function () {
-    draw(60, 46, 20, 50);
+    draw(40, 85, 0, 90);
   };
-
+  
   rightLeg = function () {
-    draw(60, 70, 100, 100);
+    draw(40, 135, 80, 165);
   };
-
+  
   leftLeg = function () {
-    draw(60, 70, 20, 100);
+    draw(40, 135, 0, 165);
   };
 
   drawArray = [
@@ -184,6 +196,7 @@ window.onload = function () {
     frame2,
     frame1
   ];
+  
 
   // OnClick Function
   check = function () {
