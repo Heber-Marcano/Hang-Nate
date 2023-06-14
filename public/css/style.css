@@ -16,10 +16,10 @@ body {
   display: table;
   clear: both;
 }
-canvas {
-  color: #ffffff;
-  border: #fff dashed 2px;
-  padding: 15px;
+canvas, #stickman {
+  color: #0b0b0b;
+  border: #121111 dashed 2px;
+  padding: 80px;
 }
 h1, h2, h3 {
   font-family: Schoolbell;
@@ -88,7 +88,7 @@ p {
   padding: 0 10px;
   font-size: 1.6em;
 }
-/* 
+
 .active {
   opacity: 0.4;
   filter: alpha(opacity=40);
@@ -106,7 +106,7 @@ p {
   -moz-transition: all 1s ease-in;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
-} */
+}
 #mylives {
   font-size: 1.6em;
   text-align: center;
