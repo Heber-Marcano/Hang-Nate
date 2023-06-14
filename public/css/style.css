@@ -112,7 +112,7 @@ p {
   text-align: center;
   display: block;
 }
-button {
+button, #profile-button,#play-button{
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -127,6 +127,11 @@ button {
   width: 180px;
   margin: 10px;
   outline: none;
+}
+#play-button{
+  position:relative;
+  top:100px;
+  right:20px;
 }
 button:hover {
   -webkit-transition: all 0.3s ease-in-out;
