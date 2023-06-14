@@ -54,7 +54,7 @@ p {
   height: 30px;
   padding-top: 10px;
   background: #fff;
-  color: #c1d72e;
+  color: rgb(245, 94, 94);
   cursor: pointer;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -63,7 +63,7 @@ p {
   border: solid 1px #fff;
 }
 #alphabet li:hover {
-  background: #c1d72e;
+  background: rgb(245, 94, 94);
   border: solid 1px #fff;
   color: #fff;
 }
@@ -81,6 +81,7 @@ p {
   padding: 0 10px;
   font-size: 1.6em;
 }
+/* 
 .active {
   opacity: 0.4;
   filter: alpha(opacity=40);
@@ -98,7 +99,7 @@ p {
   -moz-transition: all 1s ease-in;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
-}
+} */
 #mylives {
   font-size: 1.6em;
   text-align: center;
@@ -138,5 +139,9 @@ button:hover {
     padding: 0 0 0 25px;
  }
 }
-
-
+.username-password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
