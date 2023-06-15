@@ -101,24 +101,24 @@ window.onload = function () {
     if (lives < 1) {
       showLives.innerHTML = "You killed your teacher";
 
-      const getLoses =  fetch('/api/games/', {
+      fetch('/api/games/', {
         method: 'POST',
          body: JSON.stringify({word:word,won:false }),
         headers: { 'Content-Type': 'application/json' },
       });
     }
-    for (var i = 0; i < geusses.length; i++) {
+     
       if (counter + space === geusses.length) {
         showLives.innerHTML = "He survived get him!!";
        if(flips === word.split("-").join("").length){
         
-         const getLoses =  fetch('/api/games/', {
+          fetch('/api/games/', {
            method: 'POST',
             body: JSON.stringify({word:word,won:true }),
            headers: { 'Content-Type': 'application/json' },
          });
        }
-      }
+      
     }
   };
 
