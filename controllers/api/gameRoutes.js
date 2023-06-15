@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { Game } = require('../../models');
+const { Game, Word } = require('../../models');
 const withAuth = require('../../utils/auth');
 //this route creates game
 //rec.body needs to include the game word and if they won
+// POST: /api/games/
 router.post('/', withAuth, async (req, res) => {
   try {
     const newGame = await Game.create({
@@ -35,5 +36,10 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+
+
+
 
 module.exports = router;

@@ -103,7 +103,7 @@ window.onload = function () {
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
-        showLives.innerHTML = "He survived get him!!";
+        showLives.innerHTML = "He survived get him!!";  
       }
     }
   };

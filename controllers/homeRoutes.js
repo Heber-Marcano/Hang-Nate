@@ -38,6 +38,30 @@ router.get('/profile', async (req, res) => {
     const userData = await User.findByPk(req.session.user_id)
 // TODO if userData is null then redirect to 404 page or home ?
     const user = userData.get({ plain: true });
+
+    const games_won = await Game.findAll({
+      where: {
+        won:true,
+        user_id: req.session.user_id
+      } 
+    });
+
+    const games_lost = await Game.findAll({
+       where: {
+         user_id: req.session.user_id,
+         won:false,
+       } 
+     });
+
+    user.wins = games_won.length;
+    user.losses = games_lost.length;
+
+    // TODO : get the date of the last game played
+//    const date_played = await Game.findOne({
+      // get the latest game
+  //  });
+  // user.date_played = date_played
+
     console.log(user)
     res.render('profile', {
       ...user,

@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 class Word extends Model {}
 
 Word.init({
-
     id:{
         type:DataTypes.INTEGER,
         allowNull: false,
@@ -17,8 +16,6 @@ Word.init({
         validate: {
             len: [6],
           },
-
-
     }
 },{
     sequelize,
@@ -26,7 +23,6 @@ Word.init({
     freezeTableName: true,
     underscored: true,
     modelName: 'word',
-
 }
 )
 

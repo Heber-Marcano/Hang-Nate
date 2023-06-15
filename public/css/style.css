@@ -1,25 +1,25 @@
-/* Mixin's */
+
 body {
   background: #a36565;
   font-family: Schoolbell;
   color: #961e3a;
-  height: 100%;
+  height: fit-content;
   text-align: center;
   font-size: 18px;
 }
 .wrappper {
-  width: 100%;
-  margin: 0 auto;
+  width: fit-content;
+  margin: 0;
 }
 .wrappper:after {
   content: "";
-  display: table;
+  display:table;
   clear: both;
 }
 canvas, #stickman {
   color: #0b0b0b;
   border: #121111 dashed 2px;
-  padding: 80px;
+  padding: 50px;
 }
 h1, h2, h3 {
   font-family: Schoolbell;
