@@ -12,10 +12,11 @@ body {
   .username-password-container input,.login,.create-account {
     margin-bottom: 15px;
     display: block;
-    width: 170%;
-    height: 80px;
-    border-radius: 10%;
-    font-size: 20px;
+    width: 152%;
+    height: 66px;
+    border-radius: 15px;
+    font-size: 24px;
+    padding: 1%;
     
   }
   
