@@ -3,17 +3,19 @@ body {
   }
   .username-password-container {
     position: absolute;
-    top: 40%;
-    left: 10%;
-    width: 200%;
+    top: 30%;
+    left: 41%;
+    
+  
   }
   
   .username-password-container input,.login,.create-account {
     margin-bottom: 15px;
     display: block;
-    width: 300px;
-    height: 50px;
+    width: 170%;
+    height: 80px;
     border-radius: 10%;
+    font-size: 20px;
     
   }
   
