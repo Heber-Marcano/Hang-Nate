@@ -38,7 +38,7 @@ window.onload = function () {
   var lives; // Lives
   var counter; // Count correct geusses
   var space; // Number of spaces in word '-'
-
+  var flips = 0;
   // Get elements
   var showLives = document.getElementById("mylives");
   var showCatagory = document.getElementById("scatagory");
@@ -100,10 +100,24 @@ window.onload = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "You killed your teacher";
+
+      const getLoses =  fetch('/api/games/', {
+        method: 'POST',
+         body: JSON.stringify({word:word,won:false }),
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
-        showLives.innerHTML = "He survived get him!!";  
+        showLives.innerHTML = "He survived get him!!";
+       if(flips === word.split("-").join("").length){
+        
+         const getLoses =  fetch('/api/games/', {
+           method: 'POST',
+            body: JSON.stringify({word:word,won:true }),
+           headers: { 'Content-Type': 'application/json' },
+         });
+       }
       }
     }
   };
@@ -207,6 +221,7 @@ window.onload = function () {
       for (var i = 0; i < word.length; i++) {
         if (word[i] === geuss) {
           geusses[i].innerHTML = geuss;
+          flips++
           counter += 1;
         }
       }
@@ -242,7 +257,7 @@ window.onload = function () {
     word = word.replace(/\s/g, "-");
     console.log(word);
     buttons();
-
+    flips = 0;
     geusses = [];
     lives = 10;
     counter = 0;

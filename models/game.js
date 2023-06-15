@@ -13,11 +13,14 @@ Game.init(
     },
     word_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+  
       references: {
         model: 'word',
         key: 'id',
       },
+    },
+    word:{
+    type: DataTypes.STRING,
     },
     won: {
       type: DataTypes.BOOLEAN,
