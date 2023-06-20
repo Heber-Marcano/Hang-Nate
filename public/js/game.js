@@ -1,5 +1,7 @@
+const audioStart = new Audio('../assets/cyber.mp3');
 window.onload = function () {
- 
+  
+  audioStart.play();
   var alphabet = [
     "a",
     "b",
@@ -44,6 +46,8 @@ window.onload = function () {
   var showCatagory = document.getElementById("scatagory");
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
+  const audioHit = new Audio("../assets/hit.mp3");
+  
 
   // create alphabet ul
   var buttons = function () {
@@ -214,7 +218,9 @@ window.onload = function () {
 
   // OnClick Function
   check = function () {
+    
     list.onclick = function () {
+      audioStart.pause();
       var geuss = this.innerHTML;
       this.setAttribute("class", "active");
       this.onclick = null;
@@ -223,13 +229,16 @@ window.onload = function () {
           geusses[i].innerHTML = geuss;
           flips++
           counter += 1;
+          
         }
       }
       var j = word.indexOf(geuss);
+      audioHit.play();
       if (j === -1) {
         lives -= 1;
         comments();
         animate();
+        
       } else {
         comments();
       }
@@ -312,5 +321,6 @@ window.onload = function () {
     showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
     play();
+    audioStart.play();
   };
 };
