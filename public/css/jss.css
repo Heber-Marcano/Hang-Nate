@@ -3,8 +3,10 @@ body {
   }
   .username-password-container {
     position: absolute;
-    top: 30%;
-    left: 41%;
+    display:flex;
+    top: 40%;
+    left: 40%;
+    
     
   
   }
@@ -12,10 +14,10 @@ body {
   .username-password-container input,.login,.create-account {
     margin-bottom: 15px;
     display: block;
-    width: 152%;
-    height: 66px;
-    border-radius: 15px;
-    font-size: 24px;
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px;
+    font-size: 22px;
     padding: 1%;
     
   }

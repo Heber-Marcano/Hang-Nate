@@ -2,14 +2,14 @@
 body {
   background: #a36565;
   font-family: Schoolbell;
-  color: #961e3a;
-  height: fit-content;
+  color:#faf9f9;
+  margin-top: 1px;
   text-align: center;
-  font-size: 26px;
+  font-size: 22px;
 }
 .wrappper {
   width: fit-content;
-  margin: 0;
+  margin: 1000px;
 }
 .wrappper:after {
   content: "";
@@ -21,30 +21,37 @@ canvas, #stickman {
   border: #121111 dashed 2px;
   padding: 50px;
 }
-h1, h2, h3 {
+h1,h2,h3{
   font-family: Schoolbell;
   font-weight: 100;
   text-transform: uppercase;
-  margin: 45px 0;
+  margin: 20px 0;
   text-shadow: 1px 1px 2px red, 0 0 1em rgb(243, 176, 125), 0 0 0.2em rgb(247, 173, 94);
-  
+  color: #961e3a;
 }
 h1 {
-  font-size: 500%;
-  
+  font-size: 250%;
+  margin-top: 80px;
 }
 h2 {
   font-size: 1.6em;
-  
+  color: #f7f7f5;
+  text-transform: uppercase;
 }
 p {
-  font-size: 1.6em;
-  text-shadow: 1px 1px 2px red, 0 0 1em rgb(243, 176, 125), 0 0 0.2em rgb(247, 173, 94);
+  font-size: 1em;
+  text-shadow: 1px 1px 2px rgb(246, 6, 6), 0 0 1em rgb(184, 11, 11), 0 0 0.2em rgb(247, 173, 94);
 }
 #alphabet {
-  margin: 15px auto;
-  padding: 0;
-  max-width: 900px;
+  width: fit-content;
+  height: 30px;
+  display:block;
+  color: #FFF;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  
 }
 #alphabet:after {
   content: "";
@@ -56,7 +63,7 @@ p {
   margin: 0 10px 10px 0;
   list-style: none;
   width: 35px;
-  height: 38px;
+  height: 30px;
   padding-top: 2px;
   background: #e64141;
   color: #eeefe9;
@@ -87,7 +94,7 @@ p {
   display: inline-block;
   padding: 0 10px;
   font-size: 2.6em;
-  color:#450606 ;
+  color:#8a1616 ;
   font-weight: bolder;
 }
 
@@ -110,11 +117,12 @@ p {
   -webkit-transition: all 0.3s ease-in-out;
 }
 #mylives {
-  font-size: 1.6em;
+  font-size: 1em;
   text-align: center;
   display: block;
+  color: #faf9f9;
 }
-button, #profile-button{
+ #profile-button{
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -124,12 +132,29 @@ button, #profile-button{
   border: solid 1px #fff;
   text-decoration: none;
   cursor: pointer;
-  font-size: 1.2em;
-  padding: 9px 7px;
+  font-size: 1em;
+  
   width:fit-content ;
   margin: 10px;
   outline: none;
+  
 }
+
+button {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+  background: red;
+  color: #fff;
+  border: solid 1px #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+  height: fit-content;
+   
+}
+
 #play-button{
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -140,22 +165,20 @@ button, #profile-button{
   border: solid 1px #fff;
   text-decoration: none;
   cursor: pointer;
-  font-size: 1.9em;
-  padding: 4px 18px;
+  font-size: 1.5em;
+  padding: 0px 18px;
   width:180px ;
-  margin: 3px;
   outline: none;
   position:relative;
-  top:98px;
-  right:-3px;
+  height: fit-content;
 }
 button:hover {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background: #fff;
+  background: #c22d2d;
   border: solid 1px #fff;
-  color: rgb(245, 94, 94);
+  color: rgb(250, 247, 247);
 }
 @media (max-width: 767px) {
   #alphabet {
