@@ -12,7 +12,7 @@ Our hangman game with Express.js API, code configured to use Sequelize to intera
 
 ![Hang-nate](/public/assets/Screenshot%202023-06-15%20155017.png)
 
-[play the game](https://).
+[play the game](https://hangnate-525fd2a61989.herokuapp.com/).
 
 ## Technologies
 * Canvas Api
@@ -31,3 +31,4 @@ Our hangman game with Express.js API, code configured to use Sequelize to intera
  - Marsel D
  - Dedrick M
  - Ali A
+ - 
