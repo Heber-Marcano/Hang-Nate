@@ -47,6 +47,8 @@ window.onload = function () {
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
   const audioHit = new Audio("../assets/hit.mp3");
+  const audioDead = new Audio("../assets/dead.mp3")
+  const audioAlive = new Audio("../assets/alive.mp3")
   
 
   // create alphabet ul
@@ -99,12 +101,12 @@ window.onload = function () {
     }
   };
 
-  // Show lives
+  // Show lives and game end
   comments = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "You killed your teacher";
-
+      audioDead.play();
       fetch('/api/games/', {
         method: 'POST',
          body: JSON.stringify({word:word,won:false }),
@@ -115,7 +117,7 @@ window.onload = function () {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "He survived get him!!";
        if(flips === word.split("-").join("").length){
-        
+        audioAlive.play();
           fetch('/api/games/', {
            method: 'POST',
             body: JSON.stringify({word:word,won:true }),

@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/game', async (req, res) => {
+router.get('/game',withAuth, async (req, res) => {
   try {
     const wordData = await Word.findAll()
     
@@ -31,7 +31,7 @@ router.get('/game', async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 // /profile?id=1
-router.get('/profile', async (req, res) => {
+router.get('/profile',withAuth, async (req, res) => {
   try { 
     // Find the logged in user based on the session ID
     // TODO change req.query.id to use the session id instead
