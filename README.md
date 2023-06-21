@@ -31,4 +31,4 @@ Our hangman game with Express.js API, code configured to use Sequelize to intera
  - Marsel D
  - Dedrick M
  - Ali A
- - 
+   
